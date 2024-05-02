@@ -55,6 +55,7 @@ const updteTweet = asyncHandler(async(req, res) => {
                 content,
             }
         },
+        {new: true}
     )
 
     if (!newTweet) {
