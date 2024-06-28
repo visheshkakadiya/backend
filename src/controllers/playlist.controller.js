@@ -51,7 +51,7 @@ const updatePlaylist = asyncHandler(async(req, res) => {
         throw new ApiError(400, "only owner can edit the playlist");
     }
 
-    const updatePlaylist = await Playlist.findByIdAndUpdate(
+    const updatedPlaylist = await Playlist.findByIdAndUpdate(
         playlist?._id,
         {
             $set: {

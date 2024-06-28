@@ -104,6 +104,10 @@ const addComment = asyncHandler(async(req, res) => {
 
     const video = await Video.findById(videoId)
 
+    if (!video) {
+        throw new ApiError(404, "Video not found");
+    }
+
     const comment = await Comment.create({
         content,
         video: videoId,
@@ -137,7 +141,7 @@ const updateComment = asyncHandler(async(req, res) => {
         throw new ApiError(400, "only comment owner can edit their comment");
     }
 
-    const updateComment = await Comment.findByIdAndUpdate(
+    const updatedComment = await Comment.findByIdAndUpdate(
         comment?._id,
         {
             $set: {
