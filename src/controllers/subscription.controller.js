@@ -74,7 +74,7 @@ const getUserChannelSubscribers = asyncHandler(async(req, res) => {
                         $addFields: {
                             subscribedToSubscriber: {
                                 $cond: {
-                                    if: { $in: [channelId, "subscribedToSubscriber.subscriber"]},
+                                    if: { $in: [channelId, "$subscribedToSubscriber.subscriber"]},
                                     then: true,
                                     else: false,
                                 }
