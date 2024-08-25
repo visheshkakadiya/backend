@@ -1,7 +1,12 @@
 import { Router } from "express";
-import { verifyJWT } from "../middlewares/auth.middleware";
-import { upload } from "../middlewares/multer.middleware";
-import { addComment, deleteComment, getVideoComments, updateComment } from "../controllers/comment.controller.js";
+import {
+    addComment,
+    deleteComment,
+    getVideoComments,
+    updateComment,
+} from "../controllers/comment.controller.js";
+import { verifyJWT } from "../middlewares/auth.middleware.js";
+import { upload } from "../middlewares/multer.middleware.js";
 
 const router = Router();
 
