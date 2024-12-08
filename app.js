@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended: true, limit: "50mb"}))
 
 app.use(express.static("temp"))
 app.use(cookieParser())
-app.use(morgan("dev"));
+app.use(morgan("start"));
 
 
 import userRouter from "./routes/user.routes.js";
