@@ -6,6 +6,14 @@ dotenv.config({
     path: '.env'
 })
 
+app.get("/", (req, res) => {
+    res.send("Hello, World!");
+  });
+  
+  app.get("/api/test", (req, res) => {
+    res.json({ message: "API is working!" });
+  });  
+
 connectDB()
 .then(() => {
     app.listen(process.env.PORT || 8000, () => {
