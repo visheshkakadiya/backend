@@ -18,15 +18,15 @@ app.use(cookieParser())
 app.use(morgan("dev"));
 
 
-import userRouter from "./routes/user.routes.js";
-import commentRouter from "./routes/comment.routes.js";
-import likeRouter from "./routes/like.routes.js";
-import subscriptionRouter from "./routes/subscription.routes.js";
-import tweetRouter from "./routes/tweet.routes.js";
-import videoRouter from "./routes/video.routes.js";
-import healthcheckRouter from "./routes/healthcheck.routes.js";
-import playlistRouter from "./routes/playlist.routes.js";
-import dashboardRouter from "./routes/dashboard.routes.js";
+import userRouter from "./src/routes/user.routes.js";
+import commentRouter from "./src/routes/comment.routes.js";
+import likeRouter from "./src/routes/like.routes.js";
+import subscriptionRouter from "./src/routes/subscription.routes.js";
+import tweetRouter from "./src/routes/tweet.routes.js";
+import videoRouter from "./src/routes/video.routes.js";
+import healthcheckRouter from "./src/routes/healthcheck.routes.js";
+import playlistRouter from "./src/routes/playlist.routes.js";
+import dashboardRouter from "./src/routes/dashboard.routes.js";
 
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/comment", commentRouter);
