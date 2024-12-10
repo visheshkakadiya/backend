@@ -116,6 +116,7 @@ const loginUser = asyncHandler(async(req, res) => {
     const options = {
         httpOnly: true,
         secure: true,
+        sameSite: "None", // Allow cross-site requests
     }
 
     return res
@@ -141,6 +142,7 @@ const logoutUser = asyncHandler(async(req, res) => {
     const options = {
         httpOnly: true,
         secure: true,
+        sameSite: "None", // Allow cross-site requests
     }
 
     return res
@@ -175,6 +177,7 @@ const refreshAccessToken = asyncHandler(async(req, res) => {
         const options = {
             httpOnly: true,
             secure: true,
+            sameSite: "None", // Allow cross-site requests
         }
 
         const {accessToken, newRefreshToken} = await generateAccessAndRefreshToken(user._id)
